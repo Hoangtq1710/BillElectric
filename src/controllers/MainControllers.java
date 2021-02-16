@@ -249,12 +249,15 @@ public class MainControllers {
                 try {
                     System.out.print("Choose a Customer : ");
                     choiceAddBill = Integer.parseInt(scanner.nextLine());
+                    idCus = listCustomer.get(choiceAddBill - 1)[0];
                     break;
-                } catch (ArrayIndexOutOfBoundsException e) {
+                } catch (NumberFormatException e) {
+                    System.out.println("Wrong format");
+                } catch (IndexOutOfBoundsException e) {
                     System.out.println("Invalid Choice");
                 }
             }
-            idCus = listCustomer.get(choiceAddBill - 1)[0];
+
             do {
                 System.out.print("Enter day of Bill (dd/MM/yyyy) : ");
                 dateBill = scanner.nextLine();
@@ -263,7 +266,7 @@ public class MainControllers {
                 }
             } while (!RequiredValidation.requiredValidate(dateBill));
             do {
-                System.out.print("Enter Comsumption : ");
+                System.out.print("Enter Consumption : ");
                 consumption = Integer.parseInt(scanner.nextLine());
                 if (!RequiredValidation.requiredValidate(Integer.toString(consumption))) {
                     System.out.println("Input a Consumption");
