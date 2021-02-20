@@ -265,6 +265,7 @@ public class MainControllers {
                     System.out.println("Input a Day of Birth");
                 }
             } while (!RequiredValidation.requiredValidate(dateBill));
+            // can xu ly them
             do {
                 System.out.print("Enter Consumption : ");
                 consumption = Integer.parseInt(scanner.nextLine());
@@ -273,6 +274,7 @@ public class MainControllers {
                 }
             } while (!RequiredValidation.requiredValidate(Integer.toString(consumption)));
 
+            // can xu ly them
             do {
                 System.out.print("Enter Unit Price : ");
                 unitPrice = Integer.parseInt(scanner.nextLine());
